@@ -1,5 +1,6 @@
 package com.thoughtworks.todolist.entity;
 
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Todo {
     private Integer id;
     private String content;
     private Boolean status = false;
+    private Date time = new Date();
 
     public Todo() {
     }
@@ -39,5 +41,13 @@ public class Todo {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public Date getTime() {
+      return time;
+    }
+
+    public void setTime(Date time) {
+      this.time = time;
     }
 }
