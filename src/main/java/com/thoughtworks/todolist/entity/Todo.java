@@ -19,6 +19,13 @@ public class Todo {
     public Todo() {
     }
 
+    public Todo(Integer id, String content, Boolean status, Date createdTime) {
+        this.id = id;
+        this.content = content;
+        this.status = status;
+        this.createdTime = createdTime;
+    }
+
     public Integer getId() {
         return id;
     }
