@@ -10,7 +10,7 @@ public interface TodoService {
 
     Todo add(Todo todo);
 
-    Todo updateById(Integer id);
+    Todo updateStatusById(Integer id);
 
     String deleteById(Integer id);
 

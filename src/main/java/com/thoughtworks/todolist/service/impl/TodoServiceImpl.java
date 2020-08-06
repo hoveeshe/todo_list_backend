@@ -28,7 +28,7 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     @Transactional
-    public Todo updateById(Integer id) {
+    public Todo updateStatusById(Integer id) {
         Todo todo = this.todoDao.getOne(id);
         todo.setStatus(!todo.getStatus());
         return this.todoDao.save(todo);

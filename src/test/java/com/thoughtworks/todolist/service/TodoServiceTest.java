@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
@@ -30,6 +31,20 @@ class TodoServiceTest {
         when(todoDao.findAll()).thenReturn(this.getMockTodos());
         List<Todo> todos = this.todoService.findAll();
         assertEquals(5, todos.size());
+    }
+
+    @Test
+    void should_return_updated_todo_when_update_todo_given_id_and_todo() {
+        Integer id = 1;
+        Todo todoBefore = this.getMockTodos().get(0);
+        Todo todoAfter = this.getMockTodos().get(0);
+        todoAfter.setStatus(true);
+        when(todoDao.getOne(id)).thenReturn(todoBefore);
+        when(todoDao.save(todoBefore)).thenReturn(todoAfter);
+
+        Todo todoUpdated = this.todoService.updateStatusById(id);
+
+        assertTrue(todoUpdated.getStatus());
     }
 
     private List<Todo> getMockTodos() {
