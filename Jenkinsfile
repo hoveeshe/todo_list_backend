@@ -14,7 +14,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'copy build\libs\*.jar deploy'
+                dir('deploy') {
+                    bat "deploy.bat"
+                }
             }
         }
     }
