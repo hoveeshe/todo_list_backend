@@ -19,7 +19,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                dir('build\\libs')
                 bat 'deploy.bat'
             }
         }
