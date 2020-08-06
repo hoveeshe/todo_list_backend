@@ -3,6 +3,7 @@ package com.thoughtworks.todolist.controller;
 import com.thoughtworks.todolist.entity.Todo;
 import com.thoughtworks.todolist.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class TodoController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Todo add(@RequestBody Todo todo) {
         return this.todoService.add(todo);
     }
@@ -30,6 +32,7 @@ public class TodoController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public String deleteById(@PathVariable Integer id) {
         return this.todoService.deleteById(id);
     }
