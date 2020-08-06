@@ -14,7 +14,7 @@ public class Todo {
     private Integer id;
     private String content;
     private Boolean status = false;
-    private Date time = new Date();
+    private Date createdTime = new Date();
 
     public Todo() {
     }
@@ -43,11 +43,11 @@ public class Todo {
         this.status = status;
     }
 
-    public Date getTime() {
-      return time;
+    public Date getCreatedTime() {
+        return createdTime;
     }
 
-    public void setTime(Date time) {
-      this.time = time;
+    public void setCreatedTime(Date createdTime) {
+        this.createdTime = createdTime;
     }
 }
