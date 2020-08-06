@@ -6,6 +6,7 @@ import com.thoughtworks.todolist.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -20,11 +21,13 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
+    @Transactional
     public Todo add(Todo todo) {
         return this.todoDao.save(todo);
     }
 
     @Override
+    @Transactional
     public Todo updateById(Integer id) {
         Todo todo = this.todoDao.getOne(id);
         todo.setStatus(!todo.getStatus());
@@ -32,6 +35,7 @@ public class TodoServiceImpl implements TodoService {
     }
 
     @Override
+    @Transactional
     public String deleteById(Integer id) {
         this.todoDao.deleteById(id);
         return "delete success";
