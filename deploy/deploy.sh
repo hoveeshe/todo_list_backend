@@ -1,3 +1,4 @@
+#!/bin/bash
 API_NAME="todo-list-backend"
 API_VERSION="0.0.1"
 API_PORT="8010"
