@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('deploy') {
-                    bat "deploy.bat"
+                    sh "deploy.sh"
                 }
             }
         }
