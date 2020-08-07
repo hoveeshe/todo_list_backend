@@ -5,8 +5,7 @@ API_PORT="8010"
 IMAGE_NAME=${API_NAME}:${API_VERSION}
 CONTAINER_NAME=${API_NAME}-${API_VERSION}
 
-docker stop `docker ps -a| grep ${IMAGE_NAME} | awk '{print $1}' `
-docker rm   `docker ps -a| grep ${IMAGE_NAME} | awk '{print $1}' `
+docker rm -f ${CONTAINER_NAME}
 
 cp ../build/libs/*.jar ./
 docker build -t ${IMAGE_NAME} .
