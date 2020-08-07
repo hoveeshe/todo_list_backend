@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('deploy') {
-                    sh label: '', script: 'deploy.sh'
+                    sh deploy.sh
                 }
             }
         }
