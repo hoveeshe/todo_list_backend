@@ -2,7 +2,6 @@
 API_NAME="todo_list_backend_dev"
 API_VERSION="0.0.1"
 API_PORT="8110"
-ENVIRONMENT="dev"
 IMAGE_NAME=${API_NAME}:${API_VERSION}
 CONTAINER_NAME=${API_NAME}-${API_VERSION}
 DOCKER_FILE="./Dockerfile"
@@ -14,7 +13,7 @@ echo "FROM tomcat" > ${DOCKER_FILE}
 echo 'MAINTAINER hovees "hovees.cn"' >> ${DOCKER_FILE}
 echo "ADD *.jar app.jar" >> ${DOCKER_FILE}
 echo "EXPOSE 8080" >> ${DOCKER_FILE}
-echo 'ENTRYPOINT ["java","-jar","app.jar","-Dspring.profiles.active=${ENVIRONMENT}"]' >> ${DOCKER_FILE}
+echo 'ENTRYPOINT ["java","-jar","app.jar","-Dspring.profiles.active=dev"]' >> ${DOCKER_FILE}
 cat ${DOCKER_FILE}
 echo "**Init dockerfile end."
 

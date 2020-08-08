@@ -24,7 +24,7 @@ pipeline {
                             bat "deploy_qa.sh"
                         } else if (env.GIT_BRANCH == 'origin/master') {
                             echo 'Branch is master'
-                            bat "deploy_master.sh"
+                            bat "deploy_prod.sh"
                         }
                     }
                 }
