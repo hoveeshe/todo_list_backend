@@ -21,9 +21,7 @@ pipeline {
                             bat "deploy_master.sh"
                         } else if (env.BRANCH_NAME == 'dev') {
                             echo 'branch is dev'
-                            echo ${env.GIT_LOCAL_BRANCH}
                             echo env.GIT_BRANCH
-                            echo ${env.GIT_BRANCH}
                             bat "deploy_dev.sh"
                         }
                     }
