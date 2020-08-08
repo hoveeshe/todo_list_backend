@@ -1,7 +1,7 @@
 #!/bin/bash
-API_NAME="todo-list-backend"
+API_NAME="todo_list_backend_master"
 API_VERSION="0.0.1"
-API_PORT="8010"
+API_PORT="8020"
 IMAGE_NAME=${API_NAME}:${API_VERSION}
 CONTAINER_NAME=${API_NAME}-${API_VERSION}
 

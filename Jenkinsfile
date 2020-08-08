@@ -18,9 +18,10 @@ pipeline {
                     script {
                         if (env.BRANCH_NAME == 'master') {
                             echo 'branch is master'
-                            bat "deploy.sh"
+                            bat "deploy_master.sh"
                         } else if (env.BRANCH_NAME == 'dev') {
                             echo 'branch is dev'
+                            bat "deploy_dev.sh"
                         }
                     }
                 }
