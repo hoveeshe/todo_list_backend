@@ -14,11 +14,15 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                if (env.BRANCH_NAME == 'master') {
-                    echo 'branch is master'
-                    bat "./deploy/deploy.sh"
-                } else if (env.BRANCH_NAME == 'dev') {
-                    echo 'branch is dev'
+                dir('deploy') {
+                    script {
+                        if (env.BRANCH_NAME == 'master') {
+                            echo 'branch is master'
+                            bat "deploy.sh"
+                        } else if (env.BRANCH_NAME == 'dev') {
+                            echo 'branch is dev'
+                        }
+                    }
                 }
             }
         }
