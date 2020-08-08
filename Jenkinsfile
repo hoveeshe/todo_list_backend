@@ -16,12 +16,11 @@ pipeline {
             steps {
                 dir('deploy') {
                     script {
-                        if (env.BRANCH_NAME == 'master') {
-                            echo 'branch is master'
+                        if (env.GIT_BRANCH == 'origin/master') {
+                            echo 'Branch is master'
                             bat "deploy_master.sh"
-                        } else if (env.BRANCH_NAME == 'dev') {
-                            echo 'branch is dev'
-                            echo env.GIT_BRANCH
+                        } else if (env.GIT_BRANCH == 'origin/dev') {
+                            echo 'Branch is dev'
                             bat "deploy_dev.sh"
                         }
                     }
