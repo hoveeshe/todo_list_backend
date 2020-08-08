@@ -10,6 +10,11 @@ spring:
 
 ---
 spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://10.222.29.218:3306/parking_smart_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+---
+spring:
   profiles: qa
   datasource:
     url: jdbc:mysql://10.222.29.218:3306/parking_smart_qa?useSSL=false&useUnicode=true&characterEncoding=UTF-8

@@ -13,7 +13,7 @@ echo "FROM tomcat" > ${DOCKER_FILE}
 echo 'MAINTAINER hovees "hovees.cn"' >> ${DOCKER_FILE}
 echo "ADD *.jar app.jar" >> ${DOCKER_FILE}
 echo "EXPOSE 8080" >> ${DOCKER_FILE}
-echo "CMD java -jar app.jar -Dspring.profiles.active=prod" >> ${DOCKER_FILE}
+echo 'ENTRYPOINT ["java","-jar","app.jar","--spring.profiles.active=prod"]' >> ${DOCKER_FILE}
 cat ${DOCKER_FILE}
 echo "**Init dockerfile end."
 
