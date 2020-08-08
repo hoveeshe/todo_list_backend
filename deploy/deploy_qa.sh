@@ -1,8 +1,8 @@
 #!/bin/bash
-API_NAME="todo_list_backend_dev"
+API_NAME="todo_list_backend_master"
 API_VERSION="0.0.1"
-API_PORT="8110"
-ENVIRONMENT="dev"
+API_PORT="8120"
+ENVIRONMENT="qa"
 IMAGE_NAME=${API_NAME}:${API_VERSION}
 CONTAINER_NAME=${API_NAME}-${API_VERSION}
 DOCKER_FILE="./Dockerfile"
