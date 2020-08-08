@@ -1,19 +1,13 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.222.29.218:3306/parking_smart_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: jMNrvL28axnH2zmH
   jpa:
     hibernate:
       ddl-auto: none
-  profiles:
-    active: dev
 
----
-spring:
-  profiles: dev
-  datasource:
-    url: jdbc:mysql://10.222.29.218:3306/parking_smart_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8
 ---
 spring:
   profiles: qa
